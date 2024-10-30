@@ -36,7 +36,7 @@
 									<tr>
 										<td>@count</td>
 										<td>@item.Title</td>
-										<td>@item.Date</td>
+										<td>@item.Date.ToString("dd.MM.yyyy")</td>
 										@if (item.Status == true)
 										{
 											<td><a href="/ToDoList/ChangeToDoListStatusToFalse/@item.ToDoListID" class="btn btn-dark">Yapılmadı Olarak İşaretle<a /></td>
