@@ -1,0 +1,39 @@
+﻿@model List<Statistic>
+<section id="stats" class="s-stats">
+    <div class="row block-1-4 block-tab-1-2 block-mob-full stats">
+        @foreach(var item in Model)
+        {
+        <div class="col-block stats__col ">
+            <div class="stats__count">
+                @item.Project
+            </div>
+            <h4>Proje</h4>
+        </div>
+        <div class="col-block stats__col">
+            <div class="stats__count">
+                @item.OngoingCourse
+            </div>
+                <h4>Devam Eden Kurs</h4>
+        </div>
+        }
+        @foreach (var item in Model)
+        {
+            <div class="col-block stats__col stats__col--highlight">
+                <div class="stats__upsign">
+                    <a href="#"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+                </div>
+                <div class="stats__count">
+                    @item.CompletedProject
+                </div>
+                <h4>Tamamlanan Proje</h4>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">
+                @item.Certificate
+            </div>
+            <h4>Sertifika</h4>
+        </div>
+        }
+
+    </div>
+</section> <!-- end s-stats -->

@@ -1,0 +1,92 @@
+﻿@model MyPortfolioProject.Models.NavBarCombinedViewModel
+<div class="main-header">
+	<div class="logo-header">
+		<a href="index.html" class="logo">
+			Admin Paneli
+		</a>
+		<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+	</div>
+	<nav class="navbar navbar-header navbar-expand-lg">
+		<div class="container-fluid">
+
+			<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+				<div class="input-group">
+					<input type="text" placeholder="Aranacak kelimeyi giriniz..." class="form-control">
+					<div class="input-group-append">
+						<span class="input-group-text">
+							<i class="la la-search search-icon"></i>
+						</span>
+					</div>
+				</div>
+			</form>
+			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+				<li class="nav-item dropdown hidden-caret">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEnvelope" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="la la-envelope"></i>
+						<span class="notification">@ViewBag.NotReadMessageCount</span>
+					</a>
+					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdownEnvelope">
+						<li>
+							<div class="dropdown-title">Toplam @ViewBag.NotReadMessageCount Yeni Bildiriminiz Var</div>
+						</li>
+						<li>
+							<div class="notif-center">
+								@foreach (var message in Model.Messages)
+								{
+									<a href="#">
+										<div class="notif-icon notif-primary" style="width: 30px; height: 30px;">
+											<i class="la la-comment"></i>
+										</div>
+										<div class="notif-content">
+											<span class="block">@message.Subject</span>
+											<span class="time">@message.SendDate.ToShortDateString()</span>
+										</div>
+									</a>
+								}
+							</div>
+						</li>
+						<li>
+							<a class="see-all" href="/Message/MessageList"> <strong>Bildirimleri Gör</strong> <i class="la la-angle-right"></i> </a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown hidden-caret">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFolder" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="la la-folder-o"></i>
+						<span class="notification">@ViewBag.UnmadeToDoListCount</span>
+					</a>
+					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdownFolder">
+						<li>
+							<div class="dropdown-title">Toplam @ViewBag.UnmadeToDoListCount Yapılacak işiniz Var</div>
+						</li>
+						<li>
+							<div class="notif-center">
+								@foreach (var toDoLİst in Model.ToDoLists)
+								{
+									<a href="#">
+										<div class="notif-icon notif-primary" style="width: 30px; height: 30px;">
+											<i class="la la-folder"></i>
+										</div>
+										<div class="notif-content">
+											<span class="block">@toDoLİst.Title</span>
+											<span class="time">@toDoLİst.Date</span>
+										</div>
+									</a>
+								}
+
+							</div>
+						</li>
+						<li>
+							<a class="see-all" href="/ToDoList/ToDoListList"> <strong>Yapılacakları Gör</strong> <i class="la la-angle-right"></i> </a>
+						</li>
+					</ul>
+					</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>

@@ -1,0 +1,53 @@
+﻿@model List<Statistic>
+@{
+	ViewData["Title"] = "StatisticList";
+	Layout = "~/Views/Layout/Index.cshtml";
+	int Count = 0;
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">İstatikler</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">İstatikler Listesi</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							İstatikler ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Proje Sayısı</th>
+									<th scope="col">Devam Eden Kurs Sayısı</th>
+									<th scope="col">Tamamlanan Proje Sayısı</th>
+									<th scope="col">Sertifika Sayısı</th>
+									<th scope="col">Güncelle</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									Count++;
+									<tr>
+										<td>@Count</td>
+										<td>@item.Project</td>
+										<td>@item.OngoingCourse</td>
+										<td>@item.CompletedProject</td>
+										<td>@item.Certificate</td>
+										<td><a href="/Statistic/UpdateStatistic/@item.StatisticID" class="btn btn-success">Güncelle<a /></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    @await Component.InvokeAsync("_NavBarComponentPartial")
+
+    <!-- home
+    ================================================== -->
+    @await Component.InvokeAsync("_FeatureComponentPartial")
+   
+    <!-- about
+    ================================================== -->
+    @await Component.InvokeAsync("_AboutComponentPartial")
+
+    <!-- works
+    ================================================== -->
+    @await Component.InvokeAsync("_PortfolyoComponentPartial")
+
+    <!-- testimonials
+    ================================================== -->
+    @await Component.InvokeAsync("_TestimonialComponentPartial")
+
+    <!-- s-stats
+    ================================================== -->
+    @await Component.InvokeAsync("_StatisticComponentPartial")
+
+    <!-- Contact
+    ================================================== -->
+    @await Component.InvokeAsync("_ContactComponentPartial")
+
+    <!-- footer
+    ================================================== -->
+    @await Component.InvokeAsync("_FooterComponentPartial")
+
+    <!-- photoswipe background
+    ================================================== -->
+    @await Component.InvokeAsync("_PhotoSwipeComponentPartial")
+
+    <!-- Script background
+    ================================================== -->
+
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+
+</body>
+
+</html>

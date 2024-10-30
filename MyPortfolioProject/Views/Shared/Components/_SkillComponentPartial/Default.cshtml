@@ -1,0 +1,18 @@
+﻿@model List<MyPortfolioProject.DataAccessLayer.Entities.Skill>
+@{
+    int x = 0;
+}
+<div class="col-six tab-full right">
+    <h3>Programlama Dilleri & Teknolojileri</h3>
+
+    <ul class="skill-bars">
+        @foreach (var item in Model)
+        {
+            x = item.value;
+            <li>
+                <div class=progress percent style="width:@x%"><span>@item.value%</span></div>
+                <strong>@item.Title</strong>
+            </li>
+        }
+    </ul>
+</div>

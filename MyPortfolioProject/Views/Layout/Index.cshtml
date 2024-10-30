@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+	@await Component.InvokeAsync("_LayoutHeadComponentPartial")
+
+<body>
+
+	<div class="wrapper">
+
+		@await Component.InvokeAsync("_LayoutNavBarComponentPartial")
+
+	@await Component.InvokeAsync("_LayoutSideBarComponentPartial")
+		<div class="main-panel">
+	@RenderBody()
+		</div>
+	</div>
+	@await Component.InvokeAsync("_LayoutFooterComponentPartial")
+</body>
+	@await Component.InvokeAsync("_LayoutScriptComponentPartial")
+</html>
