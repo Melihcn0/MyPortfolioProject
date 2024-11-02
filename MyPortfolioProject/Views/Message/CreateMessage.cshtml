@@ -1,21 +1,21 @@
 ﻿@model MyPortfolioProject.DataAccessLayer.Entities.Message
 
-<form asp-action="CreateMessage" asp-controller="Message" method="post" id="messageForm">
+<form asp-action="CreateMessage" asp-controller="Message" method="post" id="contactForm">
     <fieldset>
         <div class="form-field">
-            <input asp-for="NameSurname" type="text" placeholder="Name" minlength="2" id="name" required class="full-width">
+            <input asp-for="NameSurname" type="text" placeholder="Name" minlength="2" id="contactname" required class="full-width">
             <span asp-validation-for="NameSurname" class="text-danger"></span>
         </div>
         <div class="form-field">
-            <input asp-for="Email" type="email" placeholder="Email" id="email" required class="full-width">
+            <input asp-for="Email" type="email" placeholder="Email" id="contactemail" required class="full-width">
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-field">
-            <input asp-for="Subject" type="text" placeholder="Subject" id="subject" class="full-width">
+            <input asp-for="Subject" type="text" placeholder="Subject" id="contactsubject" class="full-width">
             <span asp-validation-for="Subject" class="text-danger"></span>
         </div>
         <div class="form-field">
-            <textarea asp-for="MessageDetail" placeholder="Message" rows="10" id="message" required class="full-width"></textarea>
+            <textarea asp-for="MessageDetail" placeholder="Message" rows="10" id="contactmessage" required class="full-width"></textarea>
             <span asp-validation-for="MessageDetail" class="text-danger"></span>
         </div>
         <input asp-for="SendDate" type="hidden" /> <!-- Tarihi saklı olarak gönder -->

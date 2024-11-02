@@ -343,7 +343,7 @@
                     var sLoader = $('.submit-loader');
                     $.ajax({
                         type: "POST",
-                        url: "/Message/CreateMessage",
+                        url: "/inc/sendEmail.php",
                         data: $(form).serialize(),
                         beforeSend: function () {
                             sLoader.slideDown("slow");
