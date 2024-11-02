@@ -158,7 +158,7 @@
                     $thumbLink =  $folio.find('.thumb-link'),
                     $title = $folio.find('.item-folio__title'),
                     $caption = $folio.find('.item-folio__caption'),
-                    $titleText = '<h4>' + $.trim($title.html()) + '</h4>',
+                    $titleText = 'z<h4>' + $.trim($title.html()) + '</h4>',
                     $captionText = $.trim($caption.html()),
                     $href = $thumbLink.attr('href'),
                     $size = $thumbLink.data('size').split('x'),
@@ -336,56 +336,45 @@
 
     /* Contact Form
      * ------------------------------------------------------ */
-    var ssContactForm = function() {
-
-        /* local validation */
-	    $('#contactForm').validate({
-        
-            /* submit via ajax */
-            submitHandler: function(form) {
-    
-                var sLoader = $('.submit-loader');
-    
-                $.ajax({
-    
-                    type: "POST",
-                    url: "inc/sendEmail.php",
-                    data: $(form).serialize(),
-                    beforeSend: function() { 
-    
-                        sLoader.slideDown("slow");
-    
-                    },
-                    success: function(msg) {
-    
-                        // Message was sent
-                        if (msg == 'OK') {
-                            sLoader.slideUp("slow"); 
-                            $('.message-warning').fadeOut();
-                            $('#contactForm').fadeOut();
-                            $('.message-success').fadeIn();
-                        }
-                        // There was an error
-                        else {
-                            sLoader.slideUp("slow"); 
-                            $('.message-warning').html(msg);
+    $(document).ready(function () {
+        var ssContactForm = function () {
+            $('#contactForm').validate({
+                submitHandler: function (form) {
+                    var sLoader = $('.submit-loader');
+                    $.ajax({
+                        type: "POST",
+                        url: "/Message/CreateMessage",
+                        data: $(form).serialize(),
+                        beforeSend: function () {
+                            sLoader.slideDown("slow");
+                        },
+                        success: function (response) {
+                            if (response.status === 'OK') {
+                                sLoader.slideUp("slow");
+                                $('.message-warning').fadeOut();
+                                $('#contactForm').fadeOut();
+                                $('.message-success').fadeIn();
+                            } else {
+                                sLoader.slideUp("slow");
+                                $('.message-warning').html(response.errors.join("<br>"));
+                                $('.message-warning').slideDown("slow");
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            sLoader.slideUp("slow");
+                            $('.message-warning').html("Gönderilemedi: " + textStatus + " - " + errorThrown);
                             $('.message-warning').slideDown("slow");
+                            console.error("AJAX Error: ", textStatus, errorThrown); // Konsola detaylý hata mesajý yazdýr
                         }
-    
-                    },
-                    error: function() {
-    
-                        sLoader.slideUp("slow"); 
-                        $('.message-warning').html("Something went wrong. Please try again.");
-                        $('.message-warning').slideDown("slow");
-    
-                    }
-    
-                });
-            }
-    
-        });
-    };
+                    });
+                }
+            });
+        };
+        ssContactForm(); // Fonksiyon çaðrýsý
+    });
+
+
+
 
 
    /* Back to Top

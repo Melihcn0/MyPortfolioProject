@@ -38,7 +38,26 @@
 
     <!-- Contact
     ================================================== -->
-    @await Component.InvokeAsync("_ContactComponentPartial")
+    @model MyPortfolioProject.DataAccessLayer.Entities.Message
+
+    <section id="contact" class="s-contact target-section">
+        <div class="overlay"></div>
+
+        @await Component.InvokeAsync("_ContactUpsideComponentPartial")
+
+        <div class="row contact__main">
+            <div class="col-eight tab-full contact__form">
+                @await Html.PartialAsync("~/Views/Message/CreateMessage.cshtml", Model)
+            </div>
+
+            <div class="col-four tab-full contact__infos">
+                @await Component.InvokeAsync("_ContactUndersideComponentPartial")
+            </div>
+        </div>
+    </section>
+
+
+
 
     <!-- footer
     ================================================== -->

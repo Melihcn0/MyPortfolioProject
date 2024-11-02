@@ -1,0 +1,13 @@
+﻿@model List<Contact>
+
+    <div class="row narrow section-intro">
+        <div class="col-full">
+            <h3>Merhaba</h3>
+            @foreach (var item in Model)
+            {
+                <h1>@item.Title</h1>
+                <p class="lead">@item.Description</p>
+            }
+            </div>
+        </div>
+

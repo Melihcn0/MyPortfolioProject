@@ -26,17 +26,6 @@ namespace MyPortfolioProject.Controllers
             _context.SaveChanges();
             return RedirectToAction("ContactList");
         }
-        [HttpPost]
-        public async Task<IActionResult> AddMessage(Message message)
-        {
-            if (ModelState.IsValid)
-            {
-                message.SendDate = DateTime.Now;
-                _context.Messages.Add(message);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Default");
-            }
-            return View(message);
-        }
+ 
     }
 }
