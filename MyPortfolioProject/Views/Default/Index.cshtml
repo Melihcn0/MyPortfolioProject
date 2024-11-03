@@ -42,9 +42,11 @@
 
     <section id="contact" class="s-contact target-section">
         <div class="overlay"></div>
+        <br />
+        <br />
 
         @await Component.InvokeAsync("_ContactUpsideComponentPartial")
-
+        <br />
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
                 @await Html.PartialAsync("~/Views/Message/CreateMessage.cshtml", Model)
@@ -55,8 +57,6 @@
             </div>
         </div>
     </section>
-
-
 
 
     <!-- footer

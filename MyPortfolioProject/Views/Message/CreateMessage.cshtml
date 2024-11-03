@@ -1,37 +1,22 @@
 ﻿@model MyPortfolioProject.DataAccessLayer.Entities.Message
 
-<form asp-action="CreateMessage" asp-controller="Message" method="post" id="contactForm">
-    <fieldset>
-        <div class="form-field">
-            <input asp-for="NameSurname" type="text" placeholder="Name" minlength="2" id="contactname" required class="full-width">
+ <form asp-action="CreateMessage" asp-controller="Message" method="post" >
+
+    <input asp-for="NameSurname" type="text" placeholder="Adınız Soyadınız" minlength="2" maxlength="15" required class="full-width">
             <span asp-validation-for="NameSurname" class="text-danger"></span>
-        </div>
-        <div class="form-field">
-            <input asp-for="Email" type="email" placeholder="Email" id="contactemail" required class="full-width">
+
+    <input asp-for="Email" type="email" placeholder="Mailiniz"  maxlength="20"  required class="full-width">
             <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-        <div class="form-field">
-            <input asp-for="Subject" type="text" placeholder="Subject" id="contactsubject" class="full-width">
+
+    <input asp-for="Subject" type="text" placeholder="Konu" minlength="2" maxlength="20"  required class="full-width">
             <span asp-validation-for="Subject" class="text-danger"></span>
-        </div>
-        <div class="form-field">
-            <textarea asp-for="MessageDetail" placeholder="Message" rows="10" id="contactmessage" required class="full-width"></textarea>
+                
+    <textarea asp-for="MessageDetail" placeholder="Mesajınız" rows="10" minlength="5" maxlength="250" required class="full-width"></textarea>
             <span asp-validation-for="MessageDetail" class="text-danger"></span>
-        </div>
-        <input asp-for="SendDate" type="hidden" /> <!-- Tarihi saklı olarak gönder -->
-        <div class="form-field">
-            <button type="submit" class="full-width btn--primary">Submit</button>
-            <div class="submit-loader">
-                <div class="text-loader">Sending...</div>
-                <div class="s-loader">
-                    <div class="bounce1"></div>
-                    <div class="bounce2"></div>
-                    <div class="bounce3"></div>
-                </div>
-            </div>
-        </div>
-    </fieldset>
-</form>
+        
+            <button type="submit"> Gönder</button>
+</form>                 
+
 
 <div class="message-warning" style="display:none;"></div>
 <div class="message-success" style="display:none;">Mesajınız başarıyla gönderildi!</div>
