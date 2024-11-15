@@ -18,10 +18,8 @@
                         <div class="card-sub">
                             Görevlerle ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
                         </div>
-                        <div class="btn-group" role="group">
-                            <a href="@Url.Action("ToDoListList", new { isRead = false })" class="btn btn-info">Yapılmamış Görevler</a><br />
+                            <a href="@Url.Action("ToDoListList", new { isRead = false })" class="btn btn-info">Yapılmamış Görevler</a>
                             <a href="@Url.Action("ToDoListList", new { isRead = true })" class="btn btn-dark">Yapılan Görevler</a>
-                        </div>
                         <table class="table mt-3">
                             <thead>
                                 <tr>
@@ -48,7 +46,7 @@
                                         {
                                             <td><a href="/ToDoList/ChangeToDoListStatusToTrue/@item.ToDoListID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-info">Yapıldı Olarak İşaretle</a></td>
                                         }
-                                        <td><a href="/ToDoList/DeleteToDoList/@item.ToDoListID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/ToDoList/DeleteToDoList/@item.ToDoListID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="del la-remove"></a></td>
                                     </tr>
                                 }
                             </tbody>
@@ -58,11 +56,11 @@
                 </div>
             </div>
          </div>
-        <div class="pagination-container">
+        <div id="pagination-container" class="pagination-container">
             <ul class="pagination">
                 @if (ViewBag.CurrentPage > 1)
                 {
-                    <li class="page-item"><a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)&isRead=@ViewBag.IsRead">Önceki</a></li>
+                    <li class="page-item"><a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)&isRead=@ViewBag.IsRead#pagination-container">Önceki</a></li>
                 }
                 @for (int i = Math.Max(1, ViewBag.CurrentPage - 1); i <= Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 1); i++)
                 {
@@ -72,16 +70,16 @@
                     }
                     else
                     {
-                        <li class="page-item"><a class="page-link" href="?page=@i&isRead=@ViewBag.IsRead">@i</a></li>
+                        <li class="page-item"><a class="page-link" href="?page=@i&isRead=@ViewBag.IsRead#pagination-container">@i</a></li>
                     }
                 }
                 @if (ViewBag.CurrentPage < ViewBag.TotalPages)
                 {
-                    <li class="page-item"><a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)&isRead=@ViewBag.IsRead">Sonraki</a></li>
+                    <li class="page-item"><a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)&isRead=@ViewBag.IsRead#pagination-container">Sonraki</a></li>
                 }
             </ul>
         </div>
-        </div>
-        </div>
+       </div>
+      </div>
 
 

@@ -25,7 +25,7 @@
 									<th scope="col">Başlık</th>
 									<th scope="col">Değer</th>
 									<th scope="col">Sil</th>
-									<th scope="col">Güncelle</th>
+									<th scope="col">Düzenle</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -36,8 +36,8 @@
 										<td>@count</td>
 										<td>@item.Title</td>
 										<td>@item.value</td>
-										<td><a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Sil</a></td>
-										<td><a href="/Skill/UpdateSkill/@item.SkillID" class="btn btn-success">Güncelle</a></td>
+										<td><a href="/Skill/DeleteSkill/@item.SkillID" class="del la-remove"></a></td>
+										<td><a href="/Skill/UpdateSkill/@item.SkillID" class="edt la-edit"></a></td>
 									</tr>
 								}
 							</tbody>

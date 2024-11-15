@@ -26,7 +26,7 @@
 									<th scope="col">Departman</th>
 									<th scope="col">Açıklama</th>
 									<th scope="col">Sil</th>
-									<th scope="col">Güncelle</th>
+									<th scope="col">Düzenle</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -38,8 +38,8 @@
 										<td>@item.NameSurname</td>
 										<td>@item.Title</td>
 										<td>@item.Description</td>
-										<td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-danger">Sil<a /></td>
-										<td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-success">Güncelle<a /></td>
+										<td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="del la-remove"></a></td>
+										<td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="edt la-edit"></a></td>
 									</tr>
 								}
 							</tbody>
