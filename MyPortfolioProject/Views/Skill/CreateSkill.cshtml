@@ -15,15 +15,15 @@
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							Yetenekler ile ilgili ekleme işlemleri aşağıdaki panelden yapabilirsiniz.
+							Yetenekler ile ilgili ekleme işlemini aşağıdaki panelden yapabilirsiniz.
 						</div>
 						<form method="post">
 							<input type="hidden" asp-for="SkillID" />
 							<label>Başlık</label>
-							<input type="text" asp-for="Title" class="form-control" />
+							<input type="text" asp-for="Title" class="form-control" required />
 							<br />
 							<label>Değer</label>
-							<input type="number" asp-for="value" class="form-control" />
+							<input type="number" asp-for="value" class="form-control" required />
 							<br />
 							<button class="btn btn-primary">Yeteneği Ekle</button>
 						</form>

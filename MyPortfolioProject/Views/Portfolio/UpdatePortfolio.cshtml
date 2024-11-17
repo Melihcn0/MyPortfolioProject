@@ -11,26 +11,26 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">Portfolyo Güncelleme Sayfası</div>
+						<div class="card-title">Portfolyo Düzenleme Sayfası</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							Portfolyo ile ilgili güncelleme işlemini aşağıdaki panelden yapabilirsiniz.
+							Portfolyo ile ilgili düzenleme işlemini aşağıdaki panelden yapabilirsiniz.
 						</div>
 						<form method="post">
 							<input type="hidden" asp-for="PortfolioID" />
 							<label>Başlık</label>
-							<input type="text" asp-for="@Model.Title" class="form-control" />
+							<input type="text" asp-for="@Model.Title" class="form-control" required />
 							<br />
 							<label>Alt Başlık</label>
-							<input type="text" asp-for="@Model.SubTitle" class="form-control" />
+							<input type="text" asp-for="@Model.SubTitle" class="form-control" required />
 							<br />
 							<label>Açıklama</label>
-							<input type="text" asp-for="@Model.Description" class="form-control" />
+							<input type="text" asp-for="@Model.Description" class="form-control" required />
 							<br />
-							<input type="hidden" asp-for="@Model.ImageUrl" class="form-control" />
-							<input type="hidden" asp-for="@Model.Url" class="form-control" />
-							<button class="btn btn-success">Portfolyo'yu Güncelle</button>
+							<input type="hidden" asp-for="@Model.ImageUrl" class="form-control" required />
+							<input type="hidden" asp-for="@Model.Url" class="form-control" required />
+							<button class="btn btn-success">Değişiklikleri Kaydet</button>
 						</form>
 					</div>
 				</div>

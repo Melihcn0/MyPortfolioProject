@@ -1,4 +1,5 @@
 ﻿@model MyPortfolioProject.Models.NavBarCombinedViewModel
+
 <div class="main-header">
 	<div class="logo-header">
 		<a href="index.html" class="logo">
@@ -7,21 +8,12 @@
 		<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+
 		<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
 	</div>
 	<nav class="navbar navbar-header navbar-expand-lg">
 		<div class="container-fluid">
-
-			<form class="navbar-left navbar-form nav-search mr-md-3" action="">
-				<div class="input-group">
-					<input type="text" placeholder="Aranacak kelimeyi giriniz..." class="form-control">
-					<div class="input-group-append">
-						<span class="input-group-text">
-							<i class="la la-search search-icon"></i>
-						</span>
-					</div>
-				</div>
-			</form>
+			</div>
 			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 				<li class="nav-item dropdown hidden-caret">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEnvelope" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,6 +25,7 @@
 							<div class="dropdown-title">Toplam @ViewBag.NotReadMessageCount Okunmamış Mesajınız Var</div>
 						</li>
 						<li>
+
 							<div class="notif-center">
 								@foreach (var message in Model.Messages)
 								{
@@ -60,7 +53,7 @@
 					</a>
 					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdownFolder">
 						<li>
-							<div class="dropdown-title">Toplam @ViewBag.UnmadeToDoListCount Yapılmamış işiniz Var</div>
+							<div class="dropdown-title">Toplam @ViewBag.UnmadeToDoListCount Yapılmamış Göreviniz Var</div>
 						</li>
 						<li>
 							<div class="notif-center">
@@ -87,6 +80,6 @@
 					</ul>
 				</li>
 			</ul>
-		</div>
 	</nav>
 </div>
+

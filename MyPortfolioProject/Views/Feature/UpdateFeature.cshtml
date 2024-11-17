@@ -11,7 +11,7 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">Giriş Sayfası Güncelleme Sayfası</div>
+						<div class="card-title">Giriş Sayfası Düzenleme Sayfası</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
@@ -20,12 +20,12 @@
 						<form method="post">
 							<input type="hidden" asp-for="FeatureID" />
 							<label>Başlık</label>
-							<input type="text" asp-for="Title" class="form-control" />
+							<input type="text" asp-for="Title" class="form-control" required/>
 							<br />
 							<label>Açıklama</label>
-							<input type="text" asp-for="Description" class="form-control" />
+							<input type="text" asp-for="Description" class="form-control" required />
 							<br />
-							<button class="btn btn-warning">Giriş´i Güncelle</button>
+							<button class="btn btn-success">Değişiklikleri kaydet</button>
 						</form>
 					</div>
 				</div>

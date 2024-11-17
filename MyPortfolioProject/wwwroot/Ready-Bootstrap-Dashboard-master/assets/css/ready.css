@@ -2166,38 +2166,39 @@ body {
   float: none;
   margin-top: 20px;
 }
-.sidebar .nav .nav-item {
-  display: list-item;
-}
-.sidebar .nav .nav-item.active a {
-  color: #575962;
-  font-weight: 700;
-}
-.sidebar .nav .nav-item.active a:before {
-  background: #1d7af3;
-  opacity: 1 !important;
-  position: absolute;
-  z-index: 1;
-  width: 3px;
-  height: 100%;
-  content: '';
-  left: 0;
-  top: 0;
-}
-.sidebar .nav .nav-item.active:hover a:before {
-  background: #1d7af3;
-  opacity: 1 !important;
-  position: absolute;
-  z-index: 1;
-  width: 3px;
-  height: 100%;
-  content: '';
-  left: 0;
-  top: 0;
-}
-.sidebar .nav .nav-item.active a i {
-  color: #4d7cfe;
-}
+    .sidebar .nav .nav-item {
+        display: list-item;
+        position: relative;
+    }
+        .sidebar .nav .nav-item.active a {
+            color: black;
+            font-weight: 700;
+        }
+            .sidebar .nav .nav-item.active a:before {
+                background: #833baa; /* Mavi çizgi rengi */
+                opacity: 1 !important;
+                position: absolute;
+                z-index: 1;
+                width: 5px; /* Çizgi geniþliði */
+                height: 100%;
+                content: '';
+                left: 0;
+                top: 0;
+            }
+        .sidebar .nav .nav-item.active:hover a:before {
+            background: #833baa;
+            opacity: 1 !important;
+            position: absolute;
+            z-index: 1;
+            width: 3px;
+            height: 100%;
+            content: '';
+            left: 0;
+            top: 0;
+        }
+        .sidebar .nav .nav-item.active a i {
+            color: black;
+        }
 .sidebar .nav .nav-item a {
   display: flex;
   align-items: center;
@@ -2209,21 +2210,22 @@ body {
   position: relative;
   margin-bottom: 5px;
 }
-.sidebar .nav .nav-item a:hover, .sidebar .nav .nav-item a:focus {
+.sidebar .nav .nav-item a:hover, 
+.sidebar .nav .nav-item a:focus {
   text-decoration: none;
   background: #fbfbfb;
 }
-.sidebar .nav .nav-item:hover a:before {
-  background: #1d7af3;
-  opacity: 0.7;
-  position: absolute;
-  z-index: 1;
-  width: 3px;
-  height: 100%;
-  content: '';
-  left: 0;
-  top: 0;
-}
+        .sidebar .nav .nav-item:hover a:before {
+            background: #833baa;
+            opacity: 0.7;
+            position: absolute;
+            z-index: 1;
+            width: 3px;
+            height: 100%;
+            content: '';
+            left: 0;
+            top: 0;
+        }
 .sidebar .nav .nav-item a i {
   font-size: 23px;
   color: #C3C5CA;
@@ -2252,13 +2254,8 @@ body {
   min-height: calc(100% - 123px);
   margin-top: 55px;
 }
-
-.footer {
-    border-top: 1px solid #eee;
-    padding: 15px;
-    background: #ffffff;
-}
 .footer .container-fluid {
+
   display: flex;
   align-items: center;
 }
@@ -2295,6 +2292,14 @@ body {
   font-smoothing: antialiased;
 }
 .del {
+    display: flex;
+    justify-content: center; /* Yatay ortalama */
+    align-items: center; /* Dikey ortalama */
+    height: 100%; /* Parent'in yüksekliðini doldur */
+    text-align: center;
+    display: inline-block;
+    line-height: 1; /* Gerekirse tablo hücresine göre ayar yap */
+
     font: normal normal normal 16px/1 LineAwesome;
     font-size: inherit;
     text-decoration: inherit;
@@ -2328,6 +2333,14 @@ body {
         color: red;
     }
 .edt {
+    display: flex;
+    justify-content: center; /* Yatay ortalama */
+    align-items: center; /* Dikey ortalama */
+    height: 100%; /* Parent'in yüksekliðini doldur */
+    text-align: center;
+    display: inline-block;
+    line-height: 1; /* Gerekirse tablo hücresine göre ayar yap */
+
     font: normal normal normal 16px/1 LineAwesome;
     font-size: inherit;
     text-decoration: inherit;
@@ -5731,13 +5744,36 @@ body {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+/* layout menu */
+.nav-item .nav-link.active::before {
+    background: #833baa; /* Mavi çizgi rengi */
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
+    width: 5px; /* Çizgi geniþliði */
+    height: 100%;
+    content: '';
+    left: 0;
+    top: 0;
+}
 
-/*     Navbar     */
+.navbar::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Çizgi yüksekliði */
+    background-color: #833baa; /* Mor renk */
+}
+    /*     Navbar     */
 .navbar .navbar-nav .nav-item .nav-link {
+  border-top: 3px solid purple;
   display: inline-block;
   vertical-align: middle;
   color: #666;
-  line-height: 55px;
+  line-height: 40px;
   letter-spacing: 0.04em;
   padding: 0 20px 0 0;
   position: relative;
@@ -5745,11 +5781,11 @@ body {
   font-weight: 500;
   text-align: center;
 }
-.navbar .navbar-nav .nav-item .nav-link i {
-  font-size: 22px;
-  width: 30px;
-  vertical-align: middle;
-}
+    .navbar .navbar-nav .nav-item .nav-link i {
+        font-size: 22px;
+        width: 30px;
+        vertical-align: middle;
+    }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
   left: auto;
@@ -5808,28 +5844,6 @@ body {
   color: #555;
 }
 
-/*     Nav Search     */
-.nav-search .input-group {
-  border: 1px solid #eee;
-  background: #eee;
-  border-radius: 50px;
-}
-.nav-search .input-group:hover, .nav-search .input-group:focus {
-  border: 1px solid #ddd;
-}
-.nav-search .form-control {
-  border: 0;
-  background: transparent;
-  font-size: 14px;
-}
-.nav-search .input-group-text {
-  border: 0;
-  background: transparent;
-}
-.nav-search .search-icon {
-  font-size: 21px;
-  color: #666;
-}
 
 /*     Badge    */
 .badge {

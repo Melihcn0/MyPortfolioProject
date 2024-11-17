@@ -11,25 +11,25 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">Referans Güncelleme Sayfası</div>
+						<div class="card-title">Referans Düzenleme Sayfası</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							Referanslar ile ilgili Güncelleme işlemleri aşağıdaki panelden yapabilirsiniz.
+							Referanslar ile ilgili düzenleme işlemini aşağıdaki panelden yapabilirsiniz.
 						</div>
 						<form method="post">
 							<input type="hidden" asp-for="TestimonialID" class="form-control" />
 							<label>Adı Soyadı </label>
-							<input type="text" asp-for="NameSurname" class="form-control" />
+							<input type="text" asp-for="NameSurname" class="form-control" required />
 							<br />
 							<label>Departman </label>
-							<input type="text" asp-for="Title" class="form-control" />
+							<input type="text" asp-for="Title" class="form-control" required />
 							<br />
 							<label>Açıklama</label>
-							<textarea rows="4" class="form-control" asp-for="Description"></textarea>
+							<textarea rows="4" class="form-control" asp-for="Description" required></textarea>
 							<br />
 							<input type="hidden" asp-for="ImageUrl" class="form-control" />
-							<button class="btn btn-primary">Referansı Güncelle</button>
+							<button class="btn btn-success">Değişiklikleri Kaydet</button>
 						</form>
 					</div>
 				</div>

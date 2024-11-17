@@ -11,27 +11,27 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">Deneyim Güncelleme Sayfası</div>
+						<div class="card-title">Deneyim Düzenleme Sayfası</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							Deneyimler ile ilgili güncelleme işlemleri aşağıdaki panelden yapabilirsiniz.
+							Deneyimler ile ilgili düzenleme işlemini aşağıdaki panelden yapabilirsiniz.
 						</div>
 						<form method="post">
 							<input type="hidden" asp-for="ExperienceID"/>
 							<label>Firma Bilgisi</label>
-							<input type="text" asp-for="Head" class="form-control" />
+							<input type="text" asp-for="Head" class="form-control" required />
 							<br />
 							<label>Çalışılan Pozisyon</label>
-							<input type="text" asp-for="Title" class="form-control" />
+							<input type="text" asp-for="Title" class="form-control" required />
 							<br />
 							<label>Tarih Aralığı</label>
-							<input type="text" asp-for="Date" class="form-control" />
+							<input type="text" asp-for="Date" class="form-control" required />
 							<br />
 							<label>Açıklama</label>
-							<textarea rows="4" class="form-control" asp-for="Description"></textarea>
+							<textarea rows="4" class="form-control" asp-for="Description" required></textarea>
 							<br />
-							<button class="btn btn-success">Deneyimi Güncelle</button>
+							<button class="btn btn-success">Değişiklikleri Kaydet</button>
 						</form>
 					</div>
 				</div>

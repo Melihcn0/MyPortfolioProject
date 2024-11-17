@@ -13,7 +13,7 @@
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header">
-							<div class="card-title">Deneyim Listesi</div>
+							<div class="card-title">Deneyim Sayfası</div>
 						</div>
 						<div class="card-body">
 							<div class="card-sub">
@@ -40,8 +40,16 @@
 											<td>@item.Head</td>
 											<td>@item.Title</td>
 											<td>@item.Date</td>
-											<td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="del la-remove"></a></td>
-											<td><a href="/Experience/UpdateExperience/@item.ExperienceID" class="edt la-edit"></a></td>
+										<td>
+											<a href="/Experience/DeleteExperience/@item.ExperienceID" class="del">
+												<i class="la la-remove"></i>
+											</a>
+										</td>
+										<td>
+											<a href="/Experience/UpdateExperience/@item.ExperienceID" class="edt">
+												<i class="la la-edit"></i>
+											</a>
+										</td>
 									</tr>
 									}
 								</tbody>

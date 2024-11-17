@@ -11,27 +11,27 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">İstatik Güncelleme Sayfası</div>
+						<div class="card-title">İstatik Düzenleme Sayfası</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							İstatikler ile ilgili güncelleme işlemleri aşağıdaki panelden yapabilirsiniz.
+							İstatikler ile ilgili düzenleme işlemini aşağıdaki panelden yapabilirsiniz.
 						</div>
 						<form method="post">
 							<input type="hidden" asp-for="StatisticID" />
 							<label>Proje Sayısı</label>
-							<input type="number" asp-for="Project" class="form-control" />
+							<input type="number" asp-for="Project" class="form-control" required />
 							<br />
 							<label>Devam Eden Kurs Sayısı</label>
-							<input type="number" asp-for="OngoingCourse" class="form-control" />
+							<input type="number" asp-for="OngoingCourse" class="form-control" required />
 							<br />
 							<label>Tamamlanan Proje Sayısı</label>
-							<input type="tenumberxt" asp-for="CompletedProject" class="form-control" />
+							<input type="tenumberxt" asp-for="CompletedProject" class="form-control" required />
 							<br />
 							<label>Sertifika Sayısı</label>
-							<input type="number" asp-for="Certificate" class="form-control" />
+							<input type="number" asp-for="Certificate" class="form-control" required />
 							<br />
-							<button class="btn btn-success">Deneyimi Güncelle</button>
+							<button class="btn btn-success">Değişiklikleri Kaydet</button>
 						</form>
 					</div>
 				</div>

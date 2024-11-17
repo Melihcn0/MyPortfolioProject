@@ -10,6 +10,11 @@ namespace MyPortfolioProject.Controllers
 
         public IActionResult MessageList(int page = 1, int pageSize = 10, bool isRead = false)
         {
+            if (page < 1)
+            {
+                page = 1; // Negatif veya sıfır değerlerini engeller
+            }
+
             var messages = _context.Messages
                 .Where(m => m.IsRead == isRead)
                 .OrderByDescending(m => m.SendDate)
@@ -27,28 +32,29 @@ namespace MyPortfolioProject.Controllers
             return View(messages);
         }
 
-        public IActionResult ChangeIsReadToTrue(int id)
+
+        public IActionResult ChangeIsReadToTrue(int id, int page, bool isRead)
         {
             var value = _context.Messages.Find(id);
             value.IsRead = true;
             _context.SaveChanges();
-            return RedirectToAction("MessageList");
+            return RedirectToAction("MessageList", new { page = page, isRead = isRead });
         }
 
-        public IActionResult ChangeIsReadToFalse(int id)
+        public IActionResult ChangeIsReadToFalse(int id, int page, bool isRead)
         {
             var value = _context.Messages.Find(id);
             value.IsRead = false;
             _context.SaveChanges();
-            return RedirectToAction("MessageList");
+            return RedirectToAction("MessageList", new { page = page, isRead = isRead });
         }
 
-        public IActionResult DeleteMessage(int id)
+        public IActionResult DeleteMessage(int id, int page, bool isRead)
         {
             var value = _context.Messages.Find(id);
-            _context.Remove(value);
+            _context.Messages.Remove(value);
             _context.SaveChanges();
-            return RedirectToAction("MessageList");
+            return RedirectToAction("MessageList", new { page = page, isRead = isRead });
         }
 
         public IActionResult DetailMessage(int id)
@@ -63,7 +69,7 @@ namespace MyPortfolioProject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateMessage(Message message)
+        public IActionResult CreateMessage(Message message)
         {
             if (ModelState.IsValid)
             {

@@ -160,4 +160,4 @@ $(".mapcontainer").mapael({
 					}					
 				}
 			},
-		});
+});

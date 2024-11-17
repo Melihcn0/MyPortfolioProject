@@ -6,12 +6,12 @@
 
 <div class="content">
 	<div class="container-fluid">
-		<h4 class="page-title">Yeteneklerim</h4>
+		<h4 class="page-title">Yetenekler</h4>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">Yeteneklerim Güncelleme Sayfası</div>
+						<div class="card-title">Yetenek Düzenleme Sayfası</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
@@ -20,12 +20,12 @@
 						<form method="post">
 							<input type="hidden" asp-for="SkillID" />
 							<label>Başlık</label>
-							<input type="text" asp-for="Title" class="form-control" />
+							<input type="text" asp-for="Title" class="form-control" required />
 							<br />
 							<label>Değer</label>
-							<input type="number" asp-for="value" class="form-control" />
+							<input type="number" asp-for="value" class="form-control" required />
 							<br />
-							<button class="btn btn-warning">Yeteneği Güncelle</button>
+							<button class="btn btn-success">Değişiklikleri Kaydet</button>
 						</form>
 					</div>
 				</div>

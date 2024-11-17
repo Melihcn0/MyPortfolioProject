@@ -11,24 +11,24 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">Sosyal Medya Güncelleme Sayfası</div>
+						<div class="card-title">Sosyal Medya Düzenleme Sayfası</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							Sosyal Medya ile ilgili güncelleme işlemleri aşağıdaki panelden yapabilirsiniz.
+							Sosyal Medya ile ilgili düzenleme işlemini aşağıdaki panelden yapabilirsiniz.
 						</div>
 						<form method="post">
 							<input type="hidden" asp-for="SocialMediaID" />
 							<label>Başlık</label>
-							<input type="text" asp-for="Title" class="form-control" />
+							<input type="text" asp-for="Title" class="form-control" required />
 							<br />
 							<label>Adres(Url)</label>
-							<input type="text" asp-for="Url" class="form-control" />
+							<input type="text" asp-for="Url" class="form-control" required />
 							<br />
 							<label>Icon</label>
-							<input type="text" asp-for="Icon" class="form-control" />
+							<input type="text" asp-for="Icon" class="form-control" required />
 							<br />
-							<button class="btn btn-success">Sosyal Medya´yı Güncelle</button>
+							<button class="btn btn-success">Değişiklikleri Kaydet</button>
 						</form>
 					</div>
 				</div>

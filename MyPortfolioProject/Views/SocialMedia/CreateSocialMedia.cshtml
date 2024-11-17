@@ -15,19 +15,24 @@
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							Sosyal Medya ile ilgili ekleme işlemleri aşağıdaki panelden yapabilirsiniz.
+							Sosyal Medya ile ilgili ekleme işlemini aşağıdaki panelden yapabilirsiniz.
 						</div>
 						<form method="post">
 							<label>Başlık</label>
-							<input type="text" asp-for="Title" class="form-control" />
+							<input type="text" asp-for="Title" class="form-control" required />
 							<br />
 							<label>Adres(Url)</label>
-							<input type="text" asp-for="Url" class="form-control" />
+							<input type="text" asp-for="Url" class="form-control" required />
 							<br />
 							<label>Icon</label>
-							<input type="text" asp-for="Icon" class="form-control" />
+							<select asp-for="Icon" class="form-control" required> 
+								<option value="im im-twitter">Twitter</option> 
+								<option value="im im-instagram">Instagram</option>
+								<option value="im im-linkedin">LinkedIn</option>
+								<option value="im im-github">Github</option>
+							</select>
 							<br />
-							<button class="btn btn-primary">Sosyal Medya´yı Ekle</button>
+							<button class="btn btn-primary">Sosyal Medyayı Ekle</button>
 						</form>
 					</div>
 				</div>

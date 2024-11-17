@@ -5,7 +5,7 @@
     <input asp-for="NameSurname" type="text" placeholder="Adınız Soyadınız" minlength="2" maxlength="15" required class="full-width">
             <span asp-validation-for="NameSurname" class="text-danger"></span>
 
-    <input asp-for="Email" type="email" placeholder="Mailiniz"  maxlength="20"  required class="full-width">
+    <input asp-for="Email" type="email" placeholder="Mailiniz"  maxlength="35"  required class="full-width">
             <span asp-validation-for="Email" class="text-danger"></span>
 
     <input asp-for="Subject" type="text" placeholder="Konu" minlength="2" maxlength="20"  required class="full-width">
@@ -15,8 +15,4 @@
             <span asp-validation-for="MessageDetail" class="text-danger"></span>
         
             <button type="submit"> Gönder</button>
-</form>                 
-
-
-<div class="message-warning" style="display:none;"></div>
-<div class="message-success" style="display:none;">Mesajınız başarıyla gönderildi!</div>
+</form>

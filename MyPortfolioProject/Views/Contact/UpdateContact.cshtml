@@ -11,7 +11,7 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">İletişim Güncelleme Sayfası</div>
+						<div class="card-title">İletişim Düzenleme Sayfası</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
@@ -20,27 +20,27 @@
 						<form method="post">
 							<input type="hidden" asp-for="ContactID" />
 							<label>Başlık</label>
-							<input type="text" asp-for="Title" class="form-control" />
+							<input type="text" asp-for="Title" class="form-control" required />
 							<br />
 							<label>Açıklama</label>
-							<input type="text" asp-for="Description" class="form-control" />
+							<input type="text" asp-for="Description" class="form-control" required />
 							<br />
 							<label>Detay</label>
-							<input type="text" asp-for="Phone1" class="form-control" />
+							<input type="text" asp-for="Phone1" class="form-control" required />
 							<br />
 							<label>Detay</label>
-							<input type="text" asp-for="Phone2" class="form-control" />
+							<input type="text" asp-for="Phone2" class="form-control" required />
 							<br />
 							<label>Detay</label>
-							<input type="text" asp-for="Email1" class="form-control" />
+							<input type="text" asp-for="Email1" class="form-control" required />
 							<br />
 							<label>Detay</label>
-							<input type="text" asp-for="Email2" class="form-control" />
+							<input type="text" asp-for="Email2" class="form-control" required />
 							<br />
 							<label>Detay</label>
-							<input type="text" asp-for="Address" class="form-control" />
+							<input type="text" asp-for="Address" class="form-control" required />
 							<br />
-							<button class="btn btn-warning">İletişimi Güncelle</button>
+							<button class="btn btn-success">Değişiklikleri Kaydet</button>
 						</form>
 					</div>
 				</div>

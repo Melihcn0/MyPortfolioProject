@@ -12,7 +12,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Gelen Mesaj Listesi</div>
+                        <div class="card-title">Gelen Mesaj Sayfası</div>
                     </div>
                     <div class="card-body">
                         <div class="card-sub">
@@ -44,13 +44,15 @@
                                         <td><a href="/Message/DetailMessage/@item.MessageID" class="btn btn-warning">Mesajı Aç</a></td>
                                         @if (item.IsRead == true)
                                         {
-                                            <td><a href="/Message/ChangeIsReadToFalse/@item.MessageID" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>
+                                            <td><a href="/Message/ChangeIsReadToFalse/@item.MessageID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>
                                         }
                                         else
                                         {
-                                            <td><a href="/Message/ChangeIsReadToTrue/@item.MessageID" class="btn btn-info">Okundu Olarak İşaretle</a></td>
+                                            <td><a href="/Message/ChangeIsReadToTrue/@item.MessageID?page=@ViewBag.CurrentPage&isRead =@ViewBag.IsRead" class="btn btn-info">Okundu Olarak İşaretle</a></td>
                                         }
-                                        <td><a href="/Message/DeleteMessage/@item.MessageID" class="del la-remove"></a></td>
+                                        <td>
+                                            <a href="/Message/DeleteMessage/@item.MessageID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="del la-remove"></a>
+                                        </td>
                                     </tr>
                                 }
                             </tbody>
