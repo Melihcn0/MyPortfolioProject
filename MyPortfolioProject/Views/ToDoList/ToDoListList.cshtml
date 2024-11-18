@@ -18,8 +18,8 @@
                         <div class="card-sub">
                             Görevlerle ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
                         </div>
-                            <a href="@Url.Action("ToDoListList", new { isRead = false })" class="btn btn-info">Yapılmamış Görevler</a>
-                            <a href="@Url.Action("ToDoListList", new { isRead = true })" class="btn btn-dark">Yapılan Görevler</a>
+                            <a href="@Url.Action("ToDoListList", new { isRead = false })" class="btn btn-primary">Yapılmamış Görevler</a>
+                            <a href="@Url.Action("ToDoListList", new { isRead = true })" class="btn btn-secondary">Yapılan Görevler</a>
                         <table class="table mt-3">
                             <thead>
                                 <tr>
@@ -40,18 +40,18 @@
                                         <td>@item.Date.ToShortDateString()</td>
                                         @if (item.Status == true)
                                         {
-                                            <td><a href="/ToDoList/ChangeToDoListStatusToFalse/@item.ToDoListID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-dark">Yapılmadı Olarak İşaretle</a></td>
+                                            <td><a href="/ToDoList/ChangeToDoListStatusToFalse/@item.ToDoListID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-primary btn-round">Yapılmadı Olarak İşaretle</a></td>
                                         }
                                         else
                                         {
-                                            <td><a href="/ToDoList/ChangeToDoListStatusToTrue/@item.ToDoListID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-info">Yapıldı Olarak İşaretle</a></td>
+                                            <td><a href="/ToDoList/ChangeToDoListStatusToTrue/@item.ToDoListID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-secondary btn-round">Yapıldı Olarak İşaretle</a></td>
                                         }
                                         <td><a href="/ToDoList/DeleteToDoList/@item.ToDoListID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="del la-remove"></a></td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        <a href="/ToDoList/CreateToDoList/" class="btn btn-primary">Yeni Görev Girişi<a />
+                        <a href="/ToDoList/CreateToDoList/" class="btn btn-primary btn-round">Yeni Görev Girişi<a />
                     </div>
                 </div>
             </div>

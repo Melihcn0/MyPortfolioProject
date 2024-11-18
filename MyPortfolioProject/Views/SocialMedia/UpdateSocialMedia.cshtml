@@ -26,9 +26,14 @@
 							<input type="text" asp-for="Url" class="form-control" required />
 							<br />
 							<label>Icon</label>
-							<input type="text" asp-for="Icon" class="form-control" required />
+							<select asp-for="Icon" class="form-control" required>
+								<option value="im im-twitter">Twitter</option>
+								<option value="im im-instagram">Instagram</option>
+								<option value="im im-linkedin">LinkedIn</option>
+								<option value="im im-github">Github</option>
+							</select>
 							<br />
-							<button class="btn btn-success">Değişiklikleri Kaydet</button>
+							<button class="btn btn-success btn-round">Değişiklikleri Kaydet</button>
 						</form>
 					</div>
 				</div>

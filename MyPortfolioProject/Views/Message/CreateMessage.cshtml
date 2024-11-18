@@ -2,13 +2,13 @@
 
  <form asp-action="CreateMessage" asp-controller="Message" method="post" >
 
-    <input asp-for="NameSurname" type="text" placeholder="Adınız Soyadınız" minlength="2" maxlength="15" required class="full-width">
+    <input asp-for="NameSurname" type="text" placeholder="Adınız Soyadınız" minlength="2" maxlength="30" required class="full-width">
             <span asp-validation-for="NameSurname" class="text-danger"></span>
 
     <input asp-for="Email" type="email" placeholder="Mailiniz"  maxlength="35"  required class="full-width">
             <span asp-validation-for="Email" class="text-danger"></span>
 
-    <input asp-for="Subject" type="text" placeholder="Konu" minlength="2" maxlength="20"  required class="full-width">
+    <input asp-for="Subject" type="text" placeholder="Konu" minlength="2" maxlength="35"  required class="full-width">
             <span asp-validation-for="Subject" class="text-danger"></span>
                 
     <textarea asp-for="MessageDetail" placeholder="Mesajınız" rows="10" minlength="5" maxlength="250" required class="full-width"></textarea>

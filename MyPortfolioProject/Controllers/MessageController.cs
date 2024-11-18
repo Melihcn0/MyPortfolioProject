@@ -59,7 +59,11 @@ namespace MyPortfolioProject.Controllers
 
         public IActionResult DetailMessage(int id)
         {
-            var value = _context.Messages.Find(id);
+            // Veritabanından MessageID'ye göre mesajı getir
+            var value = _context.Messages.FirstOrDefault(m => m.MessageID == id);
+            // Mesajın durumuna göre başlığı ayarla
+            ViewBag.MessageStatus = value.IsRead ? "Okunmuş Mesajlar" : "Okunmamış Mesajlar";
+            // Mesajı View'a gönder
             return View(value);
         }
 

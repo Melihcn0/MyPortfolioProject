@@ -3,7 +3,7 @@
 	ViewData["Title"] = "DetailMessage";
 	Layout = "~/Views/Layout/Index.cshtml";
 }
-<input type"hidden" asp-for="MessageID" />
+<input type="hidden" asp-for="MessageID" />
 <div class="content">
 	<div class="container-fluid">
 		<h4 class="page-title">Mesajlar</h4>
@@ -11,7 +11,9 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
+						Gelen Kutusu > @ViewBag.MessageStatus<br /><br />
 						<div class="card-title">Mesaj Detayları</div>
+
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
@@ -24,6 +26,9 @@
 							<br />
 							<b>Mesaj</b> : <i>@Model.MessageDetail</i>
 						</div>
+					</div>
+					<div class="card-footer">
+						<a href="/Message/MessageList" class="btn btn-primary btn-border btn-round">Geri</a>
 					</div>
 				</div>
 			</div>

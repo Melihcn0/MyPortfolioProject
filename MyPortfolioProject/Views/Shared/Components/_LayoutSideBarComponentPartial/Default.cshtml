@@ -107,12 +107,14 @@
 				<a class="nav-link" href="/Message/MessageList">
 						<strong><i class="la la-envelope"></i></strong>
 						<p>Gelen Kutusu</p>
+					<span class="badge badge-count SideBarUnreadMessageCount">@ViewBag.UnreadMessagesCount</span>
 					</a>
 				</li>
 				<li class="nav-item">
 				<a class="nav-link" href="/ToDoList/ToDoListList">
 						<strong><i class="la la-folder-o"></i></strong>
-						<p>Yapılacaklar</p>
+						<p>Görevler</p>
+					<span class="badge badge-count SideBarInCompleteTaskCount">@ViewBag.IncompleteTasksCount</span>
 					</a>
 				</li>
 				<li class="nav-item">

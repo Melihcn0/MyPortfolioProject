@@ -50,6 +50,9 @@ body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, 
   -webkit-font-smoothing: antialiased;
   font-family: 'nunito', sans-serif;
 }
+.ptext{
+    color:white;
+}
 
 body {
   font-size: 14px;
@@ -2045,6 +2048,7 @@ body {
   border-bottom: 1px solid #eee;
 }
 .main-header .logo-header {
+    border-top:5px solid #833baa;
   float: left;
   width: 260px;
   height: 55px;
@@ -2255,7 +2259,7 @@ body {
   margin-top: 55px;
 }
 .footer .container-fluid {
-
+  border-bottom:5px solid black;
   display: flex;
   align-items: center;
 }
@@ -2291,7 +2295,15 @@ body {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
+.breadcrumb {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #6c757d; /* Gri renk */
+}
+
 .del {
+    text-decoration: none;
     display: flex;
     justify-content: center; /* Yatay ortalama */
     align-items: center; /* Dikey ortalama */
@@ -2301,8 +2313,7 @@ body {
     line-height: 1; /* Gerekirse tablo hücresine göre ayar yap */
 
     font: normal normal normal 16px/1 LineAwesome;
-    font-size: inherit;
-    text-decoration: inherit;
+    font-size: 20px; /* Ýkon boyutunu artýrmak için eklendi */
     text-rendering: optimizeLegibility;
     text-transform: none;
     -moz-osx-font-smoothing: grayscale;
@@ -2310,21 +2321,19 @@ body {
     font-smoothing: antialiased;
     color: red;
 }
-    .del:active {
-        font: normal normal normal 16px/1 LineAwesome;
-        font-size: inherit;
-        text-decoration: inherit;
-        text-rendering: optimizeLegibility;
-        text-transform: none;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        font-smoothing: antialiased;
-        color: red;
-    }
+
     .del:hover {
+        text-decoration: underline;
+        display: flex;
+        justify-content: center; /* Yatay ortalama */
+        align-items: center; /* Dikey ortalama */
+        height: 100%; /* Parent'in yüksekliðini doldur */
+        text-align: center;
+        display: inline-block;
+        line-height: 1; /* Gerekirse tablo hücresine göre ayar yap */
+
         font: normal normal normal 16px/1 LineAwesome;
-        font-size: inherit;
-        text-decoration: inherit;
+        font-size: 20px; /* Ýkon boyutunu artýrmak için eklendi */
         text-rendering: optimizeLegibility;
         text-transform: none;
         -moz-osx-font-smoothing: grayscale;
@@ -2333,6 +2342,7 @@ body {
         color: red;
     }
 .edt {
+    text-decoration: none;
     display: flex;
     justify-content: center; /* Yatay ortalama */
     align-items: center; /* Dikey ortalama */
@@ -2342,8 +2352,7 @@ body {
     line-height: 1; /* Gerekirse tablo hücresine göre ayar yap */
 
     font: normal normal normal 16px/1 LineAwesome;
-    font-size: inherit;
-    text-decoration: inherit;
+    font-size: 20px; /* Ýkon boyutunu artýrmak için eklendi */
     text-rendering: optimizeLegibility;
     text-transform: none;
     -moz-osx-font-smoothing: grayscale;
@@ -2351,21 +2360,19 @@ body {
     font-smoothing: antialiased;
     color: green;
 }
-    .edt:active {
-        font: normal normal normal 16px/1 LineAwesome;
-        font-size: inherit;
-        text-decoration: inherit;
-        text-rendering: optimizeLegibility;
-        text-transform: none;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        font-smoothing: antialiased;
-        color: green;
-    }
+
     .edt:hover {
+        text-decoration: underline;
+        display: flex;
+        justify-content: center; /* Yatay ortalama */
+        align-items: center; /* Dikey ortalama */
+        height: 100%; /* Parent'in yüksekliðini doldur */
+        text-align: center;
+        display: inline-block;
+        line-height: 1; /* Gerekirse tablo hücresine göre ayar yap */
+
         font: normal normal normal 16px/1 LineAwesome;
-        font-size: inherit;
-        text-decoration: inherit;
+        font-size: 21px; /* Ýkon boyutunu artýrmak için eklendi */
         text-rendering: optimizeLegibility;
         text-transform: none;
         -moz-osx-font-smoothing: grayscale;
@@ -5157,10 +5164,24 @@ body {
   box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
   border: 1px solid #eee;
 }
+.cardhead-text {
+    color:white;
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
 .card .card-header {
   padding: 15px 15px;
   background-color: transparent;
   border-bottom: 1px solid #ebedf2 !important;
+}
+.card-text {
+    color:White;
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0px;
 }
 .card .card-title {
   margin: 0;
@@ -5182,7 +5203,7 @@ body {
   margin-top: 5px;
   font-size: 14px;
   font-weight: 400;
-  color: #9A9A9A;
+  color: white;
   margin-bottom: 0px;
 }
 .card label {
@@ -5745,31 +5766,40 @@ body {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 /* layout menu */
-.nav-item .nav-link.active::before {
-    background: #833baa; /* Mavi çizgi rengi */
-    opacity: 1;
-    position: absolute;
-    z-index: 1;
-    width: 5px; /* Çizgi geniþliði */
-    height: 100%;
-    content: '';
-    left: 0;
-    top: 0;
+.nav-item .nav-link.active {
+    position: relative; /* Pozisyonlandýrmayý etkinleþtir */
+    border-left: 1px solid #833baa; /* Sol çizgi */
+    border-top: 1px solid #833baa; /* Üst çizgi */
+}
+
+    .nav-item .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px; /* Alt çizgi yüksekliði */
+        background: #833baa; /* Mor çizgi rengi */
+    }
+
+.SideBarUnreadMessageCount {
+    color: #1D62F0;
+}
+.SideBarInCompleteTaskCount {
+    color: #1D62F0;
 }
 
 .navbar::before {
+    border-top: 5px solid #833baa;
     content: "";
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 5px; /* Çizgi yüksekliði */
-    background-color: #833baa; /* Mor renk */
 }
     /*     Navbar     */
 .navbar .navbar-nav .nav-item .nav-link {
-  border-top: 3px solid purple;
   display: inline-block;
   vertical-align: middle;
   color: #666;
@@ -5798,7 +5828,7 @@ body {
 
 .navbar .navbar-nav .notification {
   position: absolute;
-  background-color: #ff646d;
+  background-color: black;
   text-align: center;
   border-radius: 10px;
   min-width: 17px;
@@ -6166,6 +6196,7 @@ body {
 .btn:hover, .btn:focus {
   opacity: 1;
 }
+
 
 .btn-lg {
   font-size: 18px;

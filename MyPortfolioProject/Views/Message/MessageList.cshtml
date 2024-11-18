@@ -18,8 +18,8 @@
                         <div class="card-sub">
                             Mesajlar ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
                         </div>
-                            <a href="@Url.Action("MessageList", new { isRead = false })" class="btn btn-info">Okunmamış Mesajlar</a>
-                            <a href="@Url.Action("MessageList", new { isRead = true })" class="btn btn-dark">Okunmuş Mesajlar</a>
+                            <a href="@Url.Action("MessageList", new { isRead = false })" class="btn btn-primary">Okunmamış Mesajlar</a>
+                            <a href="@Url.Action("MessageList", new { isRead = true })" class="btn btn-secondary">Okunmuş Mesajlar</a>
                         <table class="table mt-3">
                             <thead>
                                 <tr>
@@ -41,14 +41,14 @@
                                         <td>@item.NameSurname</td>
                                         <td>@item.Subject</td>
                                         <td>@item.SendDate.ToShortDateString()</td>
-                                        <td><a href="/Message/DetailMessage/@item.MessageID" class="btn btn-warning">Mesajı Aç</a></td>
+                                        <td><a href="/Message/DetailMessage/@item.MessageID" class="btn btn-warning btn-border btn-round">Mesajı Aç</a></td>
                                         @if (item.IsRead == true)
                                         {
-                                            <td><a href="/Message/ChangeIsReadToFalse/@item.MessageID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>
+                                            <td><a href="/Message/ChangeIsReadToFalse/@item.MessageID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="btn btn-primary btn-round">Okunmadı Olarak İşaretle</a></td>
                                         }
                                         else
                                         {
-                                            <td><a href="/Message/ChangeIsReadToTrue/@item.MessageID?page=@ViewBag.CurrentPage&isRead =@ViewBag.IsRead" class="btn btn-info">Okundu Olarak İşaretle</a></td>
+                                            <td><a href="/Message/ChangeIsReadToTrue/@item.MessageID?page=@ViewBag.CurrentPage&isRead =@ViewBag.IsRead" class="btn btn-secondary btn-round">Okundu Olarak İşaretle</a></td>
                                         }
                                         <td>
                                             <a href="/Message/DeleteMessage/@item.MessageID?page=@ViewBag.CurrentPage&isRead=@ViewBag.IsRead" class="del la-remove"></a>
