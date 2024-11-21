@@ -20,5 +20,6 @@ namespace MyPortfolioProject.DataAccessLayer.Context
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<ToDoList> ToDoLists { get; set; }
         public DbSet<Statistic> Statistics { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

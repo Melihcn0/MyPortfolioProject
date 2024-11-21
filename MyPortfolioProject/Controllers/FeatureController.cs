@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolioProject.DataAccessLayer.Context;
 using MyPortfolioProject.DataAccessLayer.Entities;
 
 namespace MyPortfolioProject.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class FeatureController : Controller
     {
         PortfolioContext _context = new PortfolioContext();

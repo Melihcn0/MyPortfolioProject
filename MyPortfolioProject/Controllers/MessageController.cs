@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolioProject.DataAccessLayer.Context;
 using MyPortfolioProject.DataAccessLayer.Entities;
 
 namespace MyPortfolioProject.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class MessageController : Controller
     {
         PortfolioContext _context = new PortfolioContext();
@@ -73,14 +75,14 @@ namespace MyPortfolioProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateMessage(Message message)
+        public async Task<IActionResult> CreateMessage(Message message)
         {
             if (ModelState.IsValid)
             {
                 message.SendDate = DateTime.Now;
                 // Veritabanına kaydetme işlemi
                 _context.Messages.Add(message);
-                _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 return RedirectToAction("Index","Default");
             }
                 return View(message);

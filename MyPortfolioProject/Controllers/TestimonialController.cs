@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyPortfolioProject.DataAccessLayer.Context;
 using MyPortfolioProject.DataAccessLayer.Entities;
 
 namespace MyPortfolioProject.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TestimonialController : Controller
     {
         PortfolioContext _context = new PortfolioContext();

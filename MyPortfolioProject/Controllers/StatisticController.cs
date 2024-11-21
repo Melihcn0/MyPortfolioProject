@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolioProject.DataAccessLayer.Context;
 using MyPortfolioProject.DataAccessLayer.Entities;
 using System.Linq;
 
 namespace MyPortfolioProject.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class StatisticController : Controller
     {
         PortfolioContext _context = new PortfolioContext();

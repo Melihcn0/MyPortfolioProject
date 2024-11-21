@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolioProject.DataAccessLayer.Context;
 using MyPortfolioProject.DataAccessLayer.Entities;
 
 namespace MyPortfolioProject.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ContactController : Controller
     {
         PortfolioContext _context = new PortfolioContext();
@@ -26,6 +28,6 @@ namespace MyPortfolioProject.Controllers
             _context.SaveChanges();
             return RedirectToAction("ContactList");
         }
- 
+
     }
 }

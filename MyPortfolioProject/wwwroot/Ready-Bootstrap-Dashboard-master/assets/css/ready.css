@@ -50,6 +50,11 @@ body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, 
   -webkit-font-smoothing: antialiased;
   font-family: 'nunito', sans-serif;
 }
+
+.panel-title {
+    text-decoration: none;
+    color: #575962;
+}
 .ptext{
     color:white;
 }
@@ -5874,9 +5879,21 @@ body {
   color: #555;
 }
 
+.count {
+    color: #1D62F0;
+    border-radius: 50px;
+    margin-left: auto;
+    line-height: 1;
+    padding: 6px 10px;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 11px;
+    border: 1px solid #ddd;
+}
 
 /*     Badge    */
 .badge {
+  color:#1D62F0;
   border-radius: 50px;
   margin-left: auto;
   line-height: 1;
