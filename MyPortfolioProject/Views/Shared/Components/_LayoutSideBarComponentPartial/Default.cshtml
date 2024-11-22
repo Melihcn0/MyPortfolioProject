@@ -5,11 +5,10 @@
 				<img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg">
 			</div>
 			<div class="info">
-				<a class="panel-title" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+				<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 					<span>
-						Melihcan Kaya
-						<span class="panel-title">Admin</span>
-						<span class="caret"></span>
+						<strong>Melihcan Kaya</strong>
+						<i><span>Admin</span></i>
 					</span>
 				</a>
 				<div class="clearfix"></div>
@@ -17,8 +16,8 @@
 		</div>
 		<ul class="nav">
 			<li class="nav-item">
-				<a href="/Default/Index">
-					<i class="la la-home"></i>
+				<a class="nav-link" href="/Default/Index">
+					<strong><i class="la la-table"></i></strong>
 					<p>Siteye Git</p>
 				</a>
 			</li>
@@ -113,3 +112,41 @@
 		</ul>
 	</div>
 </div>
+
+<div id="preloader">
+	<div id="loader"></div>
+</div>
+
+<script>
+// Menüdeki tüm linkleri seç
+document.querySelectorAll('.nav-link').forEach(link => {
+	link.addEventListener('click', function (e) {
+		e.preventDefault(); // Varsayılan tıklama davranışını engelle
+		showLoader(); // Loader'ı göster
+
+		const targetHref = this.getAttribute('href'); // Tıklanan linkin hedef adresini al
+		setTimeout(() => {
+			if (targetHref) {
+				window.location.href = targetHref; // Hedef sayfaya yönlendir
+			}
+		}, 1000); // 1 saniye bekle
+	});
+});
+
+// Loader'ı gösteren fonksiyon
+function showLoader() {
+	const loader = document.getElementById('preloader');
+	if (loader) {
+		loader.style.display = 'flex'; // Loader'ı görünür yap
+	}
+}
+
+// Sayfa tamamen yüklendiğinde loader'ı gizle
+document.addEventListener('DOMContentLoaded', function () {
+	const loader = document.getElementById('preloader');
+	if (loader) {
+		loader.style.display = 'none'; // Sayfa yüklendiğinde loader gizleniyor
+	}
+});
+</script>
+

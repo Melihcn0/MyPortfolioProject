@@ -24,24 +24,21 @@
                         <div class="card-header">
                             <div class="card-title">Profil Bilgilerim</div>
                         </div>
-                        <!-- Güncelle Butonu -->
+                        <!-- Güncelle Butonu --><br />
                         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#updateModal">Bilgileri Güncelle</button>
                         <div class="card-body">
-                            <p class="card-text">
-                                Profil bilgilerinizi aşağıdaki alanda görüntüleyebilir ve düzenleyebilirsiniz.
-                            </p>
                             <div class="form-group">
-                                <label for="AdminNameSurname" class="form-control-plaintext">Adınız Soyadınız</label>
+                                <label for="AdminNameSurname" class="form-control-plaintext"><strong>Adınız Soyadınız</strong></label>
                                 <input type="text" asp-for="AdminNameSurname" required class="form-control" readonly />
                                 <span asp-validation-for="AdminNameSurname" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label for="AdminMail" class="form-control-plaintext">Mailiniz</label>
+                                <label for="AdminMail" class="form-control-plaintext"><strong>Mailiniz</strong></label>
                                 <input type="email" asp-for="AdminMail" required class="form-control" readonly />
                                 <span asp-validation-for="AdminMail" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label for="AdminPassword" class="form-control-plaintext">Şifreniz</label>
+                                <label for="AdminPassword" class="form-control-plaintext"><strong>Şifreniz</strong></label>
                                 <input type="password" asp-for="AdminPassword" value="********" required class="form-control" readonly />
                                 <span asp-validation-for="AdminPassword" class="text-danger"></span>
                             </div>
@@ -63,20 +60,20 @@
                 <form asp-action="UpdateProfile" method="post" id="updateProfileForm">
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="AdminNameSurname" class="form-label">Adınız Soyadınız</label>
+                            <label for="AdminNameSurname" class="form-label"><strong>Adınız Soyadınız</strong></label>
                             <input type="text" class="form-control" id="AdminNameSurname" name="AdminNameSurname" value="@Model.AdminNameSurname" required>
                         </div>
                         <div class="mb-3">
-                            <label for="AdminMail" class="form-label">Mailiniz</label>
+                            <label for="AdminMail" class="form-label"><strong>Mailiniz</strong></label>
                             <input type="email" class="form-control" id="AdminMail" name="AdminMail" value="@Model.AdminMail" required>
                         </div>
                         <div class="mb-3">
-                            <label for="AdminPassword" class="form-label">Şifreniz</label>
-                            <input type="password" class="form-control" id="AdminPassword" name="AdminPassword" required>
+                            <label for="AdminPassword" class="form-label"><strong>Şifreniz</strong></label>
+                            <input type="password" class="form-control" id="AdminPassword" name="AdminPassword" placeholder="********" required>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">İptal</button>
+                        <div type="deletebutton" class="btn btn-outline-danger" data-bs-dismiss="modal">İptal</div>
                         <button type="submit" class="btn btn-outline-success">Güncelle</button>
                     </div>
                 </form>
@@ -91,17 +88,17 @@
 
             // Modal kapandığında şifre alanını sıfırla ve yönlendirme yap
             $('#updateModal').on('hidden.bs.modal', function() {
-                window.location.href = '/admin/profile'; // Yönlendirme yap
+
             });
 
             // "İptal" butonuna basıldığında da şifreyi sıfırla ve yönlendir
             $('#cancelButton').on('click', function() {  $('#AdminPassword').val(''); // Şifreyi sıfırla
-                window.location.href = '/admin/profile'; // Yönlendirme yap
+
             });
 
             // "Çarpı" butonuna basıldığında da şifreyi sıfırla ve yönlendir
             $('.btn-close').on('click', function() {  $('#AdminPassword').val(''); // Şifreyi sıfırla
-                window.location.href = '/admin/profile'; // Yönlendirme yap
+
             });
 
             // Form gönderilmeden önce şifre kontrolü

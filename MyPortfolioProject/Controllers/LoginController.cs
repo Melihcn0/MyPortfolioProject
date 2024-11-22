@@ -53,6 +53,7 @@ namespace MyPortfolioProject.Controllers
             // Kullanıcı bulunamadıysa yeniden login sayfasına yönlendir
             ViewBag.ErrorMessage = "Geçersiz kullanıcı adı veya şifre.";
             return View();
+           
         }
 
         // Çıkış yap

@@ -126,6 +126,11 @@ button {
 	border: none;
 	background: transparent;
 }
+deletebutton {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
 
 button:hover {
 	cursor: pointer;

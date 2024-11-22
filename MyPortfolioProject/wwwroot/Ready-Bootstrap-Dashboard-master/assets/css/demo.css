@@ -1,11 +1,46 @@
 .no-underline{
 	text-decoration:none;
 }
+#preloader {
+	--x: #833baa;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw; /* Ekran geniþliði */
+	height: 100vh; /* Ekran yüksekliði */
+	background-color: rgba(0,0,0, 0.7); /* Yarý saydam arka plan */
+	z-index: 9999; /* Üst katman */
+	justify-content: center; /* Yatay merkezleme */
+	align-items: center; /* Dikey merkezleme */
+	display: flex; /* Esnek kutu düzeni */
+}
+
+/* Dönen yükleme animasyonu */
+#loader {
+	border: 5px solid #f3f3f3; /* Dýþ çerçeve */
+	border-top: 5px solid var(--x); /* Dönen alan */
+	border-radius: 50%; /* Yuvarlak þekil */
+	width: 50px; /* Boyut */
+	height: 50px; /* Boyut */
+	animation: spin 1s linear infinite; /* Dönen animasyon */
+}
+
+/* Döndürme animasyonu */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 .update-pro{
 	margin: 15px 25px;}
 
 .update-pro button {
-		padding: 13px 25px;
+	padding: 13px 25px;
 	background: #4d7cfe;
 	color: #fff;
 	border-radius: 3px;

@@ -586,60 +586,31 @@ form,
  *
  * ------------------------------------------------------------------- */
 
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #0F1215;
-    z-index: 800;
-    height: 100%;
-    width: 100%;
+.pswp__preloader__donut {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: donut-spin 1s linear infinite;
 }
+
+@keyframes donut-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
  
 .no-js #preloader, .oldie #preloader {
     display: none;
 }
-
-#loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 60px;
-    height: 60px;
-    margin-left: -30px;
-    margin-top: -30px;
-    padding: 0;
-    background-color: white;
-    border-radius: 100%;
-    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-    animation: sk-scaleout 1.0s infinite ease-in-out;
-}
-
-@-webkit-keyframes sk-scaleout {
-    0% {
-        -webkit-transform: scale(0);
-    }
-    100% {
-        -webkit-transform: scale(1);
-        opacity: 0;
-    }
-}
-
-@keyframes sk-scaleout {
-    0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-    }
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 0;
-    }
-}
-
-
 
 /* ===================================================================
  * # forms - (_forms.scss)
@@ -3232,6 +3203,42 @@ html.no-csstransitions .home-content__main {
 .message-warning i, .message-success i {
     margin-right: 10px;
     font-size: 1.2rem;
+}
+
+/* Preloader kapsayýcýsý */
+#preloader {
+    --x: #833baa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ekran geniþliði */
+    height: 100vh; /* Ekran yüksekliði */
+    background-color: rgba(0,0,0, 0.7); /* Yarý saydam arka plan */
+    z-index: 9999; /* Üst katman */
+    justify-content: center; /* Yatay merkezleme */
+    align-items: center; /* Dikey merkezleme */
+    display: flex; /* Esnek kutu düzeni */
+}
+
+/* Dönen yükleme animasyonu */
+#loader {
+    border: 5px solid #f3f3f3; /* Dýþ çerçeve */
+    border-top: 5px solid var(--x); /* Dönen alan */
+    border-radius: 50%; /* Yuvarlak þekil */
+    width: 50px; /* Boyut */
+    height: 50px; /* Boyut */
+    animation: spin 1s linear infinite; /* Dönen animasyon */
+}
+
+/* Döndürme animasyonu */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 

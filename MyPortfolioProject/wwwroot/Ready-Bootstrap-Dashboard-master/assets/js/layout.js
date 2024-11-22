@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
             navLink.classList.remove('active');
             navLink.parentElement.classList.remove('active'); // `li` öğesinden `active` sınıfını kaldırın
         }
+
     });
 });
-
-

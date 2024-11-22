@@ -18,7 +18,10 @@
 						<input class="input100" type="password" asp-for="AdminPassword" placeholder="Şifreniz">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
-
+						@if (ViewBag.ErrorMessage != null) 
+						{ 
+							<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+						}
 					<div class="container-login100-form-btn m-t-32">
 						<button type="submit" class="login100-form-btn">
 							Giriş Yap
