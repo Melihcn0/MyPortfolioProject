@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Rewrite;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,14 +32,16 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
 app.UseRouting();
 app.UseAuthentication();
 app.UseSession();
 app.UseAuthorization();
+
 app.MapControllerRoute(
 
     name: "default",
-    pattern: "{controller=Default}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();

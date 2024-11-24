@@ -17,15 +17,4 @@
 <!--===============================================================================================-->
 <script src="~/Login_v16/js/main.js"></script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Sayfa yüklenirken yükleyiciyi gizle
-        var loader = document.getElementById("loader");
-        loader.style.display = "none";
 
-        // Sayfa geçişi başladığında yükleyiciyi göster
-        window.addEventListener("beforeunload", function() {
-            loader.style.display = "flex";
-        });
-    });
-</script>

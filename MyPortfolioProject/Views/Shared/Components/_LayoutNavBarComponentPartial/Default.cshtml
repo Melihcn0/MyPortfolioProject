@@ -17,7 +17,7 @@
 			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 				<li class="nav-item dropdown hidden-caret">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEnvelope" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="la la-envelope"></i>
+					<i class="la la-envelope navbar-icon"></i>
 					<span class="notification">@ViewBag.NotReadMessageCount</span>
 					</a>
 					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdownEnvelope">
@@ -43,13 +43,13 @@
 							</div>
 						</li>
 						<li>
-							<a class="see-all" href="/Message/MessageList"> <strong>Bildirimleri Gör</strong> <i class="la la-angle-right"></i> </a>
+							<a class="see-all x1" href="/Message/MessageList"> <strong>Bildirimleri Gör</strong> <i class="la la-angle-right"></i> </a>
 						</li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown hidden-caret">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFolder" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="la la-folder-o"></i>
+					<i class="la la-folder-o navbar-icon"></i>
 					<span class="notification">@ViewBag.UnmadeToDoListCount</span>
 					</a>
 					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdownFolder">
@@ -74,11 +74,27 @@
 							</div>
 						</li>
 						<li>
-							<a class="see-all" href="/ToDoList/ToDoListList"> <strong>Yapılacakları Gör</strong> <i class="la la-angle-right"></i> </a>
+							<a class="see-all x1" href="/ToDoList/ToDoListList"> <strong>Yapılacakları Gör</strong> <i class="la la-angle-right"></i> </a>
 						</li>
 					</ul>
 				</li>
 			</ul>
 	</nav>
 </div>
+<script>
+	document.querySelectorAll('.x1').forEach(link => {
+		link.addEventListener('click', function (e) {
+			e.preventDefault(); // Varsayılan tıklama davranışını engelle
+			showLoader(); // Loader'ı göster
+
+			const targetHref = this.getAttribute('href'); // Tıklanan linkin hedef adresini al
+			setTimeout(() => {
+				if (targetHref) {
+					window.location.href = targetHref; // Hedef sayfaya yönlendir
+				}
+			}, 1000); // 1 saniye bekle
+		});
+	});
+
+</script>
 

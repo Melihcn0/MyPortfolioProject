@@ -21,39 +21,32 @@ namespace MyPortfolioProject.Controllers
 
         // POST: Login
         [HttpPost]
-        public async Task<IActionResult> Index(Admin user)
+        public async Task<IActionResult> Index([FromBody] Admin user)
         {
-            // Veritabanından admin bilgilerini kontrol et
             var adminUserInfo = _context.Admins.FirstOrDefault(x => x.AdminMail == user.AdminMail && x.AdminPassword == user.AdminPassword);
 
             if (adminUserInfo != null)
             {
-                // Kullanıcı bilgilerini Claims olarak ekle
                 var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, adminUserInfo.AdminMail),
-                    new Claim(ClaimTypes.Role, "Admin") // Kullanıcı rolü belirtiyoruz
-                };
+        {
+            new Claim(ClaimTypes.Name, adminUserInfo.AdminMail),
+            new Claim(ClaimTypes.Role, "Admin")
+        };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var authProperties = new AuthenticationProperties
                 {
-                    IsPersistent = true // Oturum kalıcı olacak mı?
+                    IsPersistent = true
                 };
 
-                // Kimlik doğrulama işlemini gerçekleştir
                 await HttpContext.SignInAsync(
                     CookieAuthenticationDefaults.AuthenticationScheme,
                     new ClaimsPrincipal(claimsIdentity), authProperties);
 
-                // Admin paneline yönlendir
-                return RedirectToAction("Index", "Dashboard");
+                return Json(new { success = true });
             }
 
-            // Kullanıcı bulunamadıysa yeniden login sayfasına yönlendir
-            ViewBag.ErrorMessage = "Geçersiz kullanıcı adı veya şifre.";
-            return View();
-           
+            return Json(new { success = false, message = "Geçersiz kullanıcı adı veya şifre." });
         }
 
         // Çıkış yap

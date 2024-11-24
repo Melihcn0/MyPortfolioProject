@@ -3211,22 +3211,22 @@ html.no-csstransitions .home-content__main {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Ekran geniþliði */
-    height: 100vh; /* Ekran yüksekliði */
-    background-color: rgba(0,0,0, 0.7); /* Yarý saydam arka plan */
-    z-index: 9999; /* Üst katman */
-    justify-content: center; /* Yatay merkezleme */
-    align-items: center; /* Dikey merkezleme */
-    display: flex; /* Esnek kutu düzeni */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    display: none; /* Varsayýlan olarak gizli */
 }
 
 /* Dönen yükleme animasyonu */
 #loader {
-    border: 5px solid #f3f3f3; /* Dýþ çerçeve */
-    border-top: 5px solid var(--x); /* Dönen alan */
+    border: 5px solid #f3f3f3; /* Dýþ çerçeve rengi */
+    border-top: 5px solid var(--x); /* Dönen alan rengi */
     border-radius: 50%; /* Yuvarlak þekil */
-    width: 50px; /* Boyut */
-    height: 50px; /* Boyut */
+    width: 50px; /* Yükleme animasyonu geniþliði */
+    height: 50px; /* Yükleme animasyonu yüksekliði */
     animation: spin 1s linear infinite; /* Dönen animasyon */
 }
 
@@ -3240,6 +3240,22 @@ html.no-csstransitions .home-content__main {
         transform: rotate(360deg);
     }
 }
+
+/* Sayfa fade-out animasyonu */
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 
 
 /* form loader */
@@ -3285,25 +3301,25 @@ html.no-csstransitions .home-content__main {
     transform: translateX(0.45rem);
 }
 
-.s-loader > div {
-    width: 9px;
-    height: 9px;
-    background-color: #FFFFFF;
-    border-radius: 100%;
-    display: inline-block;
-    margin-right: .9rem;
-    -webkit-animation: bouncedelay 1.4s infinite ease-in-out both;
-    animation: bouncedelay 1.4s infinite ease-in-out both;
-}
+    .s-loader > div {
+        width: 9px;
+        height: 9px;
+        background-color: #FFFFFF;
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: .9rem;
+        -webkit-animation: bouncedelay 2.8s infinite ease-in-out both;
+        animation: bouncedelay 2.8s infinite ease-in-out both;
+    }
 
 .s-loader .bounce1 {
-    -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s;
+    -webkit-animation-delay: -0.64s;
+    animation-delay: -0.64s;
 }
 
 .s-loader .bounce2 {
-    -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
 }
 
 @-webkit-keyframes bouncedelay {

@@ -1227,6 +1227,8 @@ label {
   cursor: default;
 }
 
+
+
 .scroll-textarea {
   border: 1px solid #ccc;
   border-top-color: #999;
@@ -6275,9 +6277,16 @@ body {
   background: #59d05d !important;
   border-color: #59d05d !important;
 }
-.btn-success:hover, .btn-success:focus, .btn-success:disabled {
-  background: #59d05d !important;
-  border-color: #59d05d !important;
+    .btn-success:hover, .btn-success:focus, .btn-success:disabled {
+        color: var(--bs-btn-hover-color);
+        background-color: var(--bs-btn-hover-bg);
+        border-color: var(--bs-btn-hover-border-color);
+    }
+.btn-success-transparent:hover {
+    background-color: #28a745; /* Yeþil arka plan */
+    color: #fff; /* Beyaz yazý rengi */
+    border-color: #28a745; /* Yeþil dýþ çizgi */
+    transition: all 0.3s ease; /* Hover animasyonu */
 }
 
 .btn-warning {

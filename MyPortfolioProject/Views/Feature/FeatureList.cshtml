@@ -11,6 +11,7 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
+						Giriş Sayfası<br /><br />
 						<div class="card-title">Giriş Sayfası</div>
 					</div>
 					<div class="card-body">
@@ -48,4 +49,19 @@
 		</div>
 	</div>
 </div>
+<script>
+	// Tüm 'la la-edit' ikonlarını seç
+	const editIcons = document.querySelectorAll('.la la-edit');
 
+	// Tıklama olayını her bir ikona ekle
+	editIcons.forEach(icon => {
+		icon.addEventListener('click', function (event) {
+
+			// İlgili 'a' elementine 'active' sınıfını ekle
+			const parentLink = this.closest('li').querySelector('.nav-link.x1');
+			if (parentLink) {
+				parentLink.classList.add('active');
+			}
+		});
+	});
+</script>

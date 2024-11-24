@@ -1,24 +1,41 @@
-﻿<header class="s-header">
-    <div class="header-logo">
-         <br />
-        <img src="~/hola-master/images/melihcan.header.png" style="width: 230px; height: 140px;" alt="Homepage">
-    </div>
+﻿<div id="preloader">
+    <div id="loader"></div>
+</div>
+<header class="s-header">
+            <div class="header-logo">
+                <br />
+                <img src="~/hola-master/images/melihcan.header.png" style="width: 230px; height: 140px;" alt="Homepage">
+            </div>
 
-    <nav class="header-nav-wrap">
-        <ul class="header-nav">
-            <li class="current"><a class="smoothscroll" href="#home" title="home">Ana Sayfa</a></li>
-            <li><a class="smoothscroll" href="#about" title="about">Hakkımda</a></li>
-            <li><a class="smoothscroll" href="#works" title="works">Projelerim</a></li>
-            <li><a class="smoothscroll" href="#contact" title="contact">İletişim</a></li>
+            <nav class="header-nav-wrap">
+                <ul class="header-nav">
+                    <li class="current"><a class="smoothscroll" href="#home" title="home">Ana Sayfa</a></li>
+                    <li><a class="smoothscroll" href="#about" title="about">Hakkımda</a></li>
+                    <li><a class="smoothscroll" href="#works" title="works">Projelerim</a></li>
+                    <li><a class="smoothscroll" href="#contact" title="contact">İletişim</a></li>
 
-            <li>
-                <a href="/Login/Index">Giriş</a>
-            </li>
+                    <li>
+                        <a id="loginButton" href="#login">Giriş</a>
+                    </li>
 
+                </ul>
+            </nav>
 
-        </ul>
-    </nav>
+            <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
 
-    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+</header>
 
-</header> <!-- end s-header -->
+<!-- JavaScript -->
+<script>
+    document.getElementById('loginButton').addEventListener('click', function () {
+        // Loader'ı göster
+        document.getElementById('preloader').style.display = 'flex';
+        document.getElementById('loader').style.display = 'flex';
+
+        // 1 saniye sonra yönlendir
+        setTimeout(function () {
+            window.location.href = '/login/index';
+        }, 1000);
+    });
+</script>
+

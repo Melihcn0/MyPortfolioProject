@@ -12,6 +12,7 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
+						Sosyal Medya Sayfası<br /><br />
 						<div class="card-title">Sosyal Medya Sayfası</div>
 					</div>
 					<div class="card-body">
@@ -25,8 +26,8 @@
 									<th scope="col">Başlık</th>
 									<th scope="col">Adres(Url)</th>
 									<th scope="col">İcon</th>
-									<th scope="col">Sil</th>
 									<th scope="col">Düzenle</th>
+									<th scope="col">Sil</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -38,13 +39,13 @@
 										<td>@item.Title</td>
 										<td>@item.Url</td>
 										<td>@item.Icon</td>
-										<td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" class="del la-remove"></a></td>
 										<td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="edt la-edit"></a></td>
+										<td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" class="del la-remove"></a></td>
 									</tr>
 								}
 							</tbody>
 						</table>
-						<a href="/SocialMedia/CreateSocialMedia/" class="btn btn-primary btn-round">Yeni Sosyal Medya Girişi<a />
+						<a href="/SocialMedia/CreateSocialMedia/" class="btn btn-primary">Yeni Sosyal Medya Girişi<a />
 					</div>
 				</div>
 			</div>

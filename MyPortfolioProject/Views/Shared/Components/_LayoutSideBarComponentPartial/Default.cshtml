@@ -1,11 +1,11 @@
 ﻿<div class="sidebar">
-	<div class="scrollbar-inner sidebar-wrapper">
+	<div class="sidebar-wrapper">
 		<div class="user">
 			<div class="photo">
 				<img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg">
 			</div>
 			<div class="info">
-				<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+				<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true" style="user-select: none; text-decoration: none !important;">
 					<span>
 						<strong>Melihcan Kaya</strong>
 						<i><span>Admin</span></i>
@@ -16,95 +16,94 @@
 		</div>
 		<ul class="nav">
 			<li class="nav-item">
-				<a class="nav-link" href="/Default/Index">
+				<a class="nav-link x1" href="/Default/Index">
 					<strong><i class="la la-table"></i></strong>
 					<p>Siteye Git</p>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/Dashboard/Index">
+				<a class="nav-link x1" href="/Dashboard/Index">
 					<strong><i class="la la-table"></i></strong>
 					<p>Dashboard</p>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/Feature/FeatureList">
+				<a class="nav-link x1" href="/Feature/FeatureList">
 					<strong><i class="la la-align-left"></i></strong>
 					<p>Giriş Sayfası</p>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/SocialMedia/SocialMediaList">
+				<a class="nav-link x1" href="/SocialMedia/SocialMediaList">
 					<strong><i class="la la-list-ul"></i></strong>
 					<p>Sosyal Medya</p>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/About/AboutList">
+				<a class="nav-link x1" href="/About/AboutList">
 					<strong><i class="la la-file-text-o"></i></strong>
 					<p>Hakkımda</p>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/Skill/SkillList">
+				<a class="nav-link x1" href="/Skill/SkillList">
 					<strong><i class="la la-yelp"></i></strong>
 					<p>Yeteneklerim</p>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/Experience/ExperienceList/">
+				<a class="nav-link x1" href="/Experience/ExperienceList/">
 					<strong><i class="la la-trello"></i></strong>
 					<p>Deneyimler</p>
 				</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="/Portfolio/PortfolioList">
+				<a class="nav-link x1" href="/Portfolio/PortfolioList">
 					<strong><i class="la la-font"></i></strong>
 					<p>Portfolyo</p>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/Testimonial/TestimonialList">
+				<a class="nav-link x1" href="/Testimonial/TestimonialList">
 					<strong><i class="la la-users"></i></strong>
 					<p>Referanslarım</p>
 				</a>
 			</li>
 				<li class="nav-item">
-				<a class="nav-link" href="/Statistic/StatisticList">
+				<a class="nav-link x1" href="/Statistic/StatisticList">
 						<strong><i class="la la-bar-chart"></i></strong>
 						<p>İstatistikler</p>
 					</a>
 				</li>
 				<li class="nav-item">
-				<a class="nav-link" href="/Contact/ContactList">
+				<a class="nav-link x1" href="/Contact/ContactList">
 						<strong><i class="la la-phone"></i></strong>
 						<p>İletişim Bilgileri</p>
 					</a>
 				</li>
-				<li class="nav-item">
-				<a class="nav-link" href="@Url.Action("MessageList","Message")">
+			<li class="nav-item">
+				<a class="nav-link x1" href="@Url.Action("MessageList","Message")">
 						<strong><i class="la la-envelope"></i></strong>
 						<p>Gelen Kutusu</p>
 					<span class="count SideBarUnreadMessageCount">@ViewBag.UnreadMessagesCount</span>
 					</a>
 				</li>
-				<li class="nav-item">
-				<a class="nav-link" href="@Url.Action("ToDoListList","ToDoList")">
+			<li class="nav-item">
+				<a class="nav-link x1" href="@Url.Action("ToDoListList","ToDoList")">
 						<strong><i class="la la-folder-o"></i></strong>
 						<p>Görevler</p>
 					<span class="count SideBarInCompleteTaskCount">@ViewBag.IncompleteTasksCount</span>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="@Url.Action("Profile", "Admin")">
+			<li class="nav-item">
+					<a class="nav-link x1" href="@Url.Action("Profile", "Admin")">
 					<strong><i class="la la la-gear"></i></strong>
 					<p>Profilim</p>
 				</a>
-				</li>
-
+			</li>
 				<li class="nav-item">
-				<a class="nav-link" href="/Login/Logout">
+				<a class="nav-link x1" href="/Login/Logout">
 					<strong><i class="la la-sign-out"></i></strong>
 					<p>Çıkış Yap</p>
 				</a>
@@ -119,7 +118,7 @@
 
 <script>
 // Menüdeki tüm linkleri seç
-document.querySelectorAll('.nav-link').forEach(link => {
+document.querySelectorAll('.x1').forEach(link => {
 	link.addEventListener('click', function (e) {
 		e.preventDefault(); // Varsayılan tıklama davranışını engelle
 		showLoader(); // Loader'ı göster
@@ -148,5 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		loader.style.display = 'none'; // Sayfa yüklendiğinde loader gizleniyor
 	}
 });
+
 </script>
 

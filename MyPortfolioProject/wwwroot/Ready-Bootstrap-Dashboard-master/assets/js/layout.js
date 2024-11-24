@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var currentPage = window.location.pathname;
     var navLinks = document.querySelectorAll('.nav-link');
-
     navLinks.forEach(function (navLink) {
         var href = navLink.getAttribute('href');
         if (currentPage.includes(href) || currentPage === href) {

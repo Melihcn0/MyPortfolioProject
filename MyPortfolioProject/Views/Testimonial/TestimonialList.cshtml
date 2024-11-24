@@ -12,6 +12,7 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
+						Referanslar Sayfası<br /><br />
 						<div class="card-title">Referanslar Sayfası</div>
 					</div>
 					<div class="card-body">
@@ -25,8 +26,8 @@
 									<th scope="col">Adı Soyadı</th>
 									<th scope="col">Departman</th>
 									<th scope="col">Açıklama</th>
-									<th scope="col">Sil</th>
 									<th scope="col">Düzenle</th>
+									<th scope="col">Sil</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -38,13 +39,13 @@
 										<td>@item.NameSurname</td>
 										<td>@item.Title</td>
 										<td>@item.Description</td>
-										<td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="del la-remove"></a></td>
 										<td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="edt la-edit"></a></td>
+										<td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="del la-remove"></a></td>
 									</tr>
 								}
 							</tbody>
 						</table>
-						<a href="/Testimonial/CreateTestimonial/" class="btn btn-primary btn-round">Yeni Referans Girişi<a />
+						<a href="/Testimonial/CreateTestimonial/" class="btn btn-primary">Yeni Referans Girişi<a />
 					</div>
 				</div>
 			</div>

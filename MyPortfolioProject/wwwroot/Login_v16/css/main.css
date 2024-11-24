@@ -38,6 +38,83 @@ html {
 }
 
 /*---------------------------------------------*/
+/* Preloader kapsayýcýsý */
+#preloader {
+	--x: #833baa;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 9999;
+	justify-content: center;
+	align-items: center;
+	display: none; /* Varsayýlan olarak gizli */
+}
+
+/* Dönen yükleme animasyonu */
+#loader {
+	border: 5px solid #f3f3f3; /* Dýþ çerçeve rengi */
+	border-top: 5px solid var(--x); /* Dönen alan rengi */
+	border-radius: 50%; /* Yuvarlak þekil */
+	width: 50px; /* Yükleme animasyonu geniþliði */
+	height: 50px; /* Yükleme animasyonu yüksekliði */
+	animation: spin 1s linear infinite; /* Dönen animasyon */
+}
+
+.preloader {
+	--x: #833baa;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 9999;
+	justify-content: center;
+	align-items: center;
+	display: none; /* Varsayýlan olarak gizli */
+}
+
+/* Dönen yükleme animasyonu */
+.loader {
+	border: 5px solid #f3f3f3; /* Dýþ çerçeve rengi */
+	border-top: 5px solid var(--x); /* Dönen alan rengi */
+	border-radius: 50%; /* Yuvarlak þekil */
+	width: 50px; /* Yükleme animasyonu geniþliði */
+	height: 50px; /* Yükleme animasyonu yüksekliði */
+	animation: spin 1s linear infinite; /* Dönen animasyon */
+}
+
+/* Döndürme animasyonu */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.button12 {
+	user-select: none;
+	cursor: pointer;
+}
+/* Sayfa fade-out animasyonu */
+.fade-out {
+	animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
 a {
 	text-decoration:none;
 	font-family: Ubuntu-Regular;
